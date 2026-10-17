@@ -1,20 +1,28 @@
-# Nordhash Digital
+# Nordhash RC
 
-Tuotantovalmis, riippuvuuksista vapaa yrityssivusto. Sivusto käyttää ainoastaan HTML5:tä, CSS3:a ja Vanilla JavaScriptiä.
+Suomenkielinen, staattinen esittelysivusto kehitteillä olevalle RC-etäajopalvelulle. Julkaisu: https://nordhash.fi/ (GitHub Pages, main-haaran juuri).
 
-## Käyttöönotto
+## Sisältö
 
-1. Siirrä kaikki tiedostot GitHub-repositorion juureen.
-2. Ota GitHub Pages käyttöön repositoryn **Settings → Pages** -kohdasta ja valitse julkaistavaksi päähaara.
-3. Sivusto on määritetty osoitteelle `https://nordhash.fi/`. Varmista GitHub Pagesin tai hosting-palvelun domain-asetuksista, että verkkotunnus osoittaa julkaisuun.
-4. Lomake on käyttöliittymädemo. Kytke se omaan lomakepalveluun tai palvelinrajapintaan ennen tuotantokäyttöä.
+- Etusivu: RC-auto netin yli, toimintaperiaate, kehitysvaihe, kysymykset ja sähköpostiyhteys.
+- ohjaimet.html: näppäimistö, peliohjain ja vielä tarkentuvat laitevaatimukset.
+- fpv-rc-auto.html: opas kameranäkymästä ajamiseen ja internetin yli ohjaukseen.
+- Tietosuoja, sivuston käyttöehdot ja oma 404-sivu.
 
-## Tiedostot
+Ei varausjärjestelmää, maksamista, ajopalvelua, analytiikkaa tai rekisteröitymistä. Kaikki ensisijainen sisältö toimii ilman JavaScriptiä.
 
-- `index.html` — sisältö, semantiikka ja SEO-metatiedot
-- `style.css` — responsiivinen premium-ulkoasu
-- `script.js` — navigaatio, animaatiot, accordion ja lomaketila
-- `robots.txt`, `sitemap.xml`, `manifest.webmanifest`, `browserconfig.xml`, `favicon.svg` — hakukone- ja selaintuki
-- `verkkosivut-jyvaskyla.html`, `hakukoneoptimointi-jyvaskyla.html` — paikalliset SEO-palvelusivut
-- `ai-chatbot-yritykselle.html`, `ai-automaatiot-yritykselle.html` — AI-ratkaisujen palvelusivut
-- `verkkokaupat-yrityksille.html`, `verkkosivujen-yllapito.html` — verkkokaupan ja ylläpidon palvelusivut
+## Paikallinen esikatselu
+
+Aja staattinen HTTP-palvelin tämän hakemiston juuressa. Sivusto ei tarvitse rakennusvaihetta tai ulkopuolisia selainriippuvuuksia.
+
+## Ennen ajopalvelun avaamista
+
+Vahvista nimi, hinnat, testatut ohjaimet, laitevaatimukset ja ajopalvelun osoite. Korvaa ratapiirros oikealla kuvalla tai videolla. Päivitä käyttö- ja tietosuojaehdot vastaamaan todellista ajopalvelua.
+
+## Hakukonenäkyvyys
+
+Yksilölliset otsikot ja kuvaukset, canonical-osoitteet, semanttinen HTML, sisäiset linkit, Open Graph -kuva, Organization/WebSite-rakenteinen tieto, robots.txt ja sivukartta. Vain sisältösivut sivukartassa. Vanhat digitoimiston palvelusivut poistettu; ne palauttavat GitHub Pagesin 404-vastauksen.
+
+Lisää https://nordhash.fi/sitemap.xml verkkotunnuksen omistajan Google Search Consoleen. Hakusijoituksia ei voi taata. Älä lisää valearvosteluja, keksittyjä toimipaikkoja tai julkaisemattomia hintoja rakenteiseen tietoon.
+
+CNAME säilyttää nordhash.fi-verkkotunnuksen. Aiempi sivusto löytyy Git-historiasta.
