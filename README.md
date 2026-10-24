@@ -1,28 +1,29 @@
-# Nordhash RC
+# Finnish Garage Simulator — projektisivusto
 
-Suomenkielinen, staattinen esittelysivusto kehitteillä olevalle RC-etäajopalvelulle. Julkaisu: https://nordhash.fi/ (GitHub Pages, main-haaran juuri).
+Suomenkielinen staattinen esittelysivusto pelille. Julkaisu: https://nordhash.fi/ (GitHub Pages, main-haaran juuri). Sivustolla korostetaan, että peli on kehityksessä eikä julkista demoa ole vielä saatavilla.
 
 ## Sisältö
 
-- Etusivu: RC-auto netin yli, toimintaperiaate, kehitysvaihe, kysymykset ja sähköpostiyhteys.
-- ohjaimet.html: näppäimistö, peliohjain ja vielä tarkentuvat laitevaatimukset.
-- fpv-rc-auto.html: opas kameranäkymästä ajamiseen ja internetin yli ohjaukseen.
-- Tietosuoja, sivuston käyttöehdot ja oma 404-sivu.
+- index.html: pelin idea, oikeat kehityskuvat, kehitystilanne, kysymykset ja yhteys.
+- pelista.html: pelin suunta ja kehityksen rajat.
+- ohjaimet.html: suunniteltu alusta ja vielä vahvistamattomat ohjain-/laitevaatimukset.
+- Tietosuoja, käyttöehdot ja 404.
+- Vanha fpv-rc-auto.html ohjaa pelistä kertovalle sivulle; vanhaa RC-palvelua ei enää markkinoida.
 
-Ei varausjärjestelmää, maksamista, ajopalvelua, analytiikkaa tai rekisteröitymistä. Kaikki ensisijainen sisältö toimii ilman JavaScriptiä.
+Ei demoa, pelilatausta, ennakkotilausta, maksamista, uutiskirjettä, analytiikkaa tai yhteydenottolomaketta. Yhteys tapahtuu nykyisellä sähköpostiosoitteella. Steam Early Access esitetään suunniteltuna julkaisusuuntana, ei vahvistettuna julkaisuna.
 
 ## Paikallinen esikatselu
 
-Aja staattinen HTTP-palvelin tämän hakemiston juuressa. Sivusto ei tarvitse rakennusvaihetta tai ulkopuolisia selainriippuvuuksia.
+Aja `python -m http.server 4173 --bind 127.0.0.1` repositorion juuressa ja avaa http://127.0.0.1:4173/ . Rakennusvaihetta tai npm-riippuvuuksia ei tarvita. Pääsisältö ja navigaatio toimivat myös ilman JavaScriptiä.
 
-## Ennen ajopalvelun avaamista
+## Päivittäminen
 
-Vahvista nimi, hinnat, testatut ohjaimet, laitevaatimukset ja ajopalvelun osoite. Korvaa ratapiirros oikealla kuvalla tai videolla. Päivitä käyttö- ja tietosuojaehdot vastaamaan todellista ajopalvelua.
+Muuta HTML-tiedostoja, style.css:ää ja tarvittaessa script.js:ää. Säilytä CNAME, joka pitää nordhash.fi-verkkotunnuksen käytössä. Main-haaraan lähetetty muutos käynnistää nykyisen GitHub Pages -julkaisun. Julkaisupäivää, hintaa, kauppalinkkiä tai demoa ei saa esittää saatavana ennen vahvistusta.
 
-## Hakukonenäkyvyys
+Kuvien alkuperä ja versiot ovat assets/README.md:ssä. Kehityskuvat on merkitty sivustolla; ne eivät lupaa lopullista grafiikkatasoa. Kuvia päivittäessä päivitä myös Open Graph -kuva ja sen mitat metatiedoissa.
 
-Yksilölliset otsikot ja kuvaukset, canonical-osoitteet, semanttinen HTML, sisäiset linkit, Open Graph -kuva, Organization/WebSite-rakenteinen tieto, robots.txt ja sivukartta. Vain sisältösivut sivukartassa. Vanhat digitoimiston palvelusivut poistettu; ne palauttavat GitHub Pagesin 404-vastauksen.
+Sivustolla on canonical-osoitteet, metakuvaukset, Open Graph -tiedot, WebPage-rakenteinen tieto, robots.txt ja sitemap.xml. Sivukartassa ovat vain varsinaiset sisältösivut.
 
-Lisää https://nordhash.fi/sitemap.xml verkkotunnuksen omistajan Google Search Consoleen. Hakusijoituksia ei voi taata. Älä lisää valearvosteluja, keksittyjä toimipaikkoja tai julkaisemattomia hintoja rakenteiseen tietoon.
+## Testaus
 
-CNAME säilyttää nordhash.fi-verkkotunnuksen. Aiempi sivusto löytyy Git-historiasta.
+`python tests/check_html.py` tarkistaa paikalliset linkit, ankkurit, kuvien vaihtoehtotekstit ja sivujen perustiedot. `npm ci` ja `npx playwright install chromium` asentavat vain kehittäjän testityökalut. `npm test` tarkistaa etusivun, alasivut, 390/320 px mobiilivalikot, JavaScriptittömän navigaation ja kuvakaappaukset. CI ajaa samat testit GitHubissa.
