@@ -18,6 +18,7 @@ test('home shows development status, real images and working navigation', async 
     await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true);
   }
   await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({ path: `test-results/${testInfo.project.name}-hero.png` });
   await page.screenshot({ path: `test-results/${testInfo.project.name}-home.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   const menu = page.getByRole('button', { name: /Valikko/ });
