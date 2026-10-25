@@ -10,7 +10,7 @@ Suomenkielinen staattinen esittelysivusto pelille. Julkaisu: https://nordhash.fi
 - Tietosuoja, käyttöehdot ja 404.
 - Vanha fpv-rc-auto.html ohjaa pelistä kertovalle sivulle; vanhaa RC-palvelua ei enää markkinoida.
 
-Ei demoa, pelilatausta, ennakkotilausta, maksamista, uutiskirjettä, analytiikkaa tai yhteydenottolomaketta. Yhteys tapahtuu nykyisellä sähköpostiosoitteella. Steam Early Access esitetään suunniteltuna julkaisusuuntana, ei vahvistettuna julkaisuna.
+Ei demoa, pelilatausta, ennakkotilausta, maksamista, uutiskirjettä tai yhteydenottolomaketta. Yhteys tapahtuu nykyisellä sähköpostiosoitteella. Steam Early Access esitetään suunniteltuna julkaisusuuntana, ei vahvistettuna julkaisuna.
 
 ## Paikallinen esikatselu
 
@@ -27,3 +27,9 @@ Sivustolla on canonical-osoitteet, metakuvaukset, Open Graph -tiedot, WebPage-ra
 ## Testaus
 
 `python tests/check_html.py` tarkistaa paikalliset linkit, ankkurit, kuvien vaihtoehtotekstit ja sivujen perustiedot. `npm ci` ja `npx playwright install chromium` asentavat vain kehittäjän testityökalut. `npm test` tarkistaa etusivun, alasivut, 390/320 px mobiilivalikot, JavaScriptittömän navigaation ja kuvakaappaukset. CI ajaa samat testit GitHubissa.
+
+## Analytiikka 25.10.2026
+
+Google Analytics 4 käyttää tunnusta G-F93778VN28. analytics.js sisältää käyttäjän Google-tagin ja lataa sen kaikille kuudelle varsinaiselle sivulle vasta analytiikan hyväksymisen jälkeen (basic consent mode). Vanhasta RC-osoitteesta ohjataan varsinaiselle sivulle ennen analytiikkaa. Hylkäys, puuttuva valinta ja JavaScriptitön käyttö eivät lataa Google-tagia. Valinta muistetaan 180 päivää; sivun alareunan Evästeasetukset avaa valinnan uudelleen. Peruuttaminen poistaa _ga-evästeet ja lataa sivun ilman tagia. Mainosten suostumukset pysyvät estettyinä.
+
+Omistajan Analytics-tilin raportteja, tietojen säilytysasetuksia tai Google-tilin asetuksia ei muutettu. Tarkista ne Analyticsin hallinnassa. Testit varmistavat latausportin ja tunnisteen; raporttien kertymistä ei voi vahvistaa ilman Analytics-tilin näkymää. Toteutuksen lähde: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic .

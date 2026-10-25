@@ -11,6 +11,9 @@ test('home shows development status, real images and working navigation', async 
   await expect(page.locator('.status-strip')).toContainText('Julkista demoa ei vielä ole saatavilla.');
   await expect(page.locator('#kehitys h3')).toContainText('Demoa ei vielä ole.');
   await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.locator('.gallery-grid img')).toHaveCount(4);
+  await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/markka-gt-012.png');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/markka-gt-012.png');
   await expect(page.locator('form')).toHaveCount(0);
   await expect(page.locator('a[href$=".zip"],a[href$=".exe"]')).toHaveCount(0);
   for (const image of await page.locator('main img').all()) {
@@ -65,5 +68,72 @@ test('mobile navigation and content work without JavaScript', async ({ browser }
   await expect(page.locator('.menu-toggle')).toBeHidden();
   await page.locator('#navigation').getByRole('link', { name: 'Kehitys', exact: true }).click();
   await expect(page).toHaveURL(/#kehitys$/);
+  await context.close();
+});
+
+const consentKey = 'fgs.analytics-consent.v1';
+const tagUrl = 'https://www.googletagmanager.com/gtag/js?id=G-F93778VN28';
+async function stubGoogle(page) {
+  await page.route('https://www.googletagmanager.com/gtag/js?**', route => route.fulfill({
+    contentType: 'application/javascript',
+    body: "window.__tagLoaded = true; document.cookie = '_ga=GA1.1.test; path=/; SameSite=Lax';"
+  }));
+}
+
+test('analytics is opt-in, refusal persists, consent loads correct tag and withdrawal removes it', async ({ page, context }) => {
+  const google = [];
+  page.on('request', request => { if (/google(tagmanager|-analytics)\.com/.test(request.url())) google.push(request.url()); });
+  await stubGoogle(page);
+  await page.goto('/');
+  await expect(page.getByRole('region', { name: 'Analytiikka-asetukset' })).toBeVisible();
+  await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
+  expect(google).toEqual([]);
+  await page.getByRole('button', { name: 'Vain välttämättömät' }).click();
+  await page.reload();
+  await expect(page.getByRole('region', { name: 'Analytiikka-asetukset' })).toBeHidden();
+  expect(google).toEqual([]);
+  for (const path of ['/pelista.html', '/ohjaimet.html', '/tietosuoja.html', '/kayttoehdot.html', '/404.html']) {
+    await page.goto(path);
+    await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Evästeasetukset' })).toBeVisible();
+  }
+  expect(google).toEqual([]);
+  await page.getByRole('button', { name: 'Evästeasetukset' }).click();
+  await page.getByRole('button', { name: 'Hyväksy analytiikka' }).click();
+  await expect.poll(() => page.evaluate(() => window.__tagLoaded)).toBe(true);
+  expect(google).toEqual([tagUrl]);
+  const commands = await page.evaluate(() => window.dataLayer.map(args => Array.from(args)));
+  expect(commands.find(args => args[0] === 'consent' && args[1] === 'default')[2].analytics_storage).toBe('denied');
+  expect(commands.find(args => args[0] === 'consent' && args[1] === 'update')[2]).toMatchObject({ analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  expect(commands.filter(args => args[0] === 'config')).toHaveLength(1);
+  expect(commands.find(args => args[0] === 'config')[1]).toBe('G-F93778VN28');
+  expect((await context.cookies()).some(cookie => cookie.name === '_ga')).toBe(true);
+  await page.goto('/pelista.html');
+  await expect.poll(() => page.evaluate(() => window.__tagLoaded)).toBe(true);
+  expect(google).toHaveLength(2);
+  await page.getByRole('button', { name: 'Evästeasetukset' }).click();
+  await Promise.all([page.waitForEvent('load'), page.getByRole('button', { name: 'Vain välttämättömät' }).click()]);
+  await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
+  expect(google).toHaveLength(2);
+  expect((await context.cookies()).some(cookie => /^_ga/.test(cookie.name))).toBe(false);
+  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).value, consentKey)).toBe('rejected');
+});
+
+test('expired consent and unavailable storage do not silently enable analytics', async ({ page, browser }) => {
+  await page.addInitScript(key => localStorage.setItem(key, JSON.stringify({ value: 'accepted', expires: Date.now() - 1 })), consentKey);
+  await page.goto('/');
+  await expect(page.getByRole('region', { name: 'Analytiikka-asetukset' })).toBeVisible();
+  await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
+  const context = await browser.newContext();
+  const restricted = await context.newPage();
+  await restricted.addInitScript(() => {
+    Object.defineProperty(Storage.prototype, 'getItem', { value() { throw new Error('blocked'); } });
+    Object.defineProperty(Storage.prototype, 'setItem', { value() { throw new Error('blocked'); } });
+  });
+  await stubGoogle(restricted);
+  await restricted.goto('http://127.0.0.1:4173/');
+  await expect(restricted.locator('#fgs-google-tag')).toHaveCount(0);
+  await restricted.getByRole('button', { name: 'Hyväksy analytiikka' }).click();
+  await expect.poll(() => restricted.evaluate(() => window.__tagLoaded)).toBe(true);
   await context.close();
 });
