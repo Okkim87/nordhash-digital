@@ -17,7 +17,19 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - name: Use HTTPS Ubuntu package mirror
+        run: |
+          sudo python3 - <<'PY'
+          from pathlib import Path
+          # The runner's HTTP Azure mirror can stall large font downloads.
+          for folder in [Path('/etc/apt/sources.list.d'), Path('/etc/apt')]:
+              for source in folder.glob('*.sources' if folder.name == 'sources.list.d' else 'sources.list'):
+                  text = source.read_text()
+                  text = text.replace('http://azure.archive.ubuntu.com/ubuntu', 'https://archive.ubuntu.com/ubuntu')
+                  text = text.replace('http://security.ubuntu.com/ubuntu', 'https://security.ubuntu.com/ubuntu')
+                  source.write_text(text)
+          PY
+      - run: npx playwright install --with-deps --only-shell chromium
       - run: python3 tests/check_html.py
       - run: npm test
       - uses: actions/upload-artifact@v4
