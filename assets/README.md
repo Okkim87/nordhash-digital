@@ -1,3 +1,15 @@
+# Nykyiset kuvat — 0.20 / 26.10.2026
+
+Etusivu, englanninkielinen esittely ja kehityskatsaus käyttävät kahdeksaa oikeaa pelikuvaa buildista `0.20.0-complete-visual-world-20261026-045009`. Lähde on projektin `Screenshots/0.20`-kansio. Tiedostokohtaiset alkuperät ja lähdekuvien SHA-256-tarkisteet: [screenshots-020.json](screenshots-020.json).
+
+Jokaisesta kuvasta on 480/800/1280 pikselin WebP-versio ja 1280×720 progressiivinen JPEG. Käsittely on ainoastaan koon muuttaminen ja verkkokoodaus; kuvan sisältöä ei ole retusoitu eikä generoitu. Pääkuva ja jakokuva näyttävät tallin. Kehitysvaihe, kuvauspäivä ja versionumero kerrotaan näkyvässä sisällössä. Kuvat eivät esitä valmista peliä tai julkista demoa.
+
+Pelin uudet puu-/työkalu-/kalustemallit, maastokartat ja taivas sisältävät Poly Havenin CC0-resursseja: https://polyhaven.com/license . Peliprojektin tarkempi lähdeaineistorekisteri on `SteamRelease/SCANNED_ASSETS_20_SOURCE.json`. Osa 3D-malleista on edelleen projektin ohjelmallisia malleja. Tavaramerkkien oikeudellista hyväksyntää ei väitetä automaattiseksi.
+
+Vanhoja kuvatiedostoja ei poisteta, jotta aiemmin jaetut kuvalinkit säilyvät. Alla oleva historia kuvaa aiempia versioita.
+
+---
+
 # Sivuston kuvat
 
 Kuvat ovat Finnish Garage Simulator -projektin omia kehitysrendereitä. Ne eivät esitä valmista peliä eikä niitä ole otettu muista peleistä.
