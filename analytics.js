@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   const id = 'G-F93778VN28';
+  const english = document.documentElement.lang === 'en';
   const key = 'fgs.analytics-consent.v1';
   const lifetime = 180 * 24 * 60 * 60 * 1000;
   const denied = { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
@@ -51,15 +52,15 @@
 
   const panel = document.createElement('section');
   panel.className = 'consent-panel';
-  panel.setAttribute('aria-label', 'Analytiikka-asetukset');
-  panel.innerHTML = '<h2>Kävijätilastot, sinun luvallasi.</h2><p>Käytämme Google Analyticsia sivuston käytön mittaamiseen vain luvallasi. Voit kieltäytyä ja käyttää sivustoa normaalisti. Valinnan voit muuttaa sivun alareunan evästeasetuksista. <a href="tietosuoja.html#evasteet">Lisätietoja tietosuojasta</a>.</p><div class="consent-actions"><button type="button" data-consent="accepted">Hyväksy analytiikka</button><button type="button" data-consent="rejected">Vain välttämättömät</button></div>';
+  panel.setAttribute('aria-label', english ? 'Analytics preferences' : 'Analytiikka-asetukset');
+  panel.innerHTML = english ? '<h2>Visitor statistics, with your permission.</h2><p>We load Google Analytics only if you allow it. You can decline and use the website normally. Change your choice using Cookie settings in the footer. <a href="tietosuoja.html#evasteet">Privacy information (Finnish)</a>.</p><div class="consent-actions"><button type="button" data-consent="accepted">Allow analytics</button><button type="button" data-consent="rejected">Essential only</button></div>' : '<h2>Kävijätilastot, sinun luvallasi.</h2><p>Käytämme Google Analyticsia sivuston käytön mittaamiseen vain luvallasi. Voit kieltäytyä ja käyttää sivustoa normaalisti. Valinnan voit muuttaa sivun alareunan evästeasetuksista. <a href="tietosuoja.html#evasteet">Lisätietoja tietosuojasta</a>.</p><div class="consent-actions"><button type="button" data-consent="accepted">Hyväksy analytiikka</button><button type="button" data-consent="rejected">Vain välttämättömät</button></div>';
   panel.hidden = choice !== null;
   document.body.append(panel);
 
   const settings = document.createElement('button');
   settings.type = 'button';
   settings.className = 'consent-settings';
-  settings.textContent = 'Evästeasetukset';
+  settings.textContent = english ? 'Cookie settings' : 'Evästeasetukset';
   settings.setAttribute('aria-expanded', String(!panel.hidden));
   const footer = document.querySelector('.footer-bottom > div');
   (footer || document.body).append(settings);

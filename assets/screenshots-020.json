@@ -1,0 +1,66 @@
+[
+  {
+    "name": "finnish-garage-simulator-talli-020",
+    "source": "graphics20-workshop-interior.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "3d55a9ee945457a51283ce65eea0c390ae022b71c2fb92316c5e31bd8905e73a",
+    "alt": "Finnish Garage Simulatorin talli: työkalukärry, työpöytä ja varaosahyllyt 0.20-kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-moottori-020",
+    "source": "korpi-engine-overhead.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "5d90419c92d72d1b5563777950331d752819f2c999c03248d98b42069bc9b9f2",
+    "alt": "Kuvitteellisen Korpi-auton konehuone: moottori, akku, jäähdytin ja letkut kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-kesametsa-020",
+    "source": "graphics20-forest-summer.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "12318336ef5e6c1afeed43a4e8ca6b8d48dbee71a0007bd451c18349d9abc0aa",
+    "alt": "Kesäinen soratie ja metsä matkalla ladolle Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-talvitie-020",
+    "source": "graphics20-forest-winter.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "f040e412ca9527f26c3d06790a8938e455a4a729e6ed68a182dc85aeca8e9e9b",
+    "alt": "Luminen metsä ja talvinen soratie Finnish Garage Simulatorin 0.20-kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-markka-gt-020",
+    "source": "markka-exterior.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "aa6852ed636a10f00513735edceee79944448f55c822e2067a8cbae8a538bdb1",
+    "alt": "Kuvitteellinen Markka GT -projektiauto kehitysversion tasaisella ajofysiikan testialustalla",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-ohjaamo-020",
+    "source": "markka-cockpit.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "4bb43a0b740262286233ea44a4e867853d0d4eedc6967a1c2532004e0da47dff",
+    "alt": "Markka GT:n ohjaamo ja mittaristo pelin ensimmäisen persoonan ajonäkymässä",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-puutyo-020",
+    "source": "wood-split.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "cd98b08a2d1f17d7f44a0fd9eaee4994d24a021d374734c95717316692a6fe9d",
+    "alt": "Pöllin halkaisu kirveellä ja näkyvät kädet Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-tallipiha-020",
+    "source": "graphics20-workshop-summer.png",
+    "build": "0.20.0-complete-visual-world-20261026-045009",
+    "sourceSha256": "e3cfd10920f763ff9a1350bd1a8745d2710c3fd8ba5f655e58ce4a39a999886f",
+    "alt": "Tallirakennus, sorapiha ja metsä Finnish Garage Simulatorin kesäisessä kehitysnäkymässä",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]

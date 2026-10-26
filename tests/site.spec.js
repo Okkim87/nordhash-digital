@@ -11,9 +11,9 @@ test('home shows development status, real images and working navigation', async 
   await expect(page.locator('.status-strip')).toContainText('Julkista demoa ei vielä ole saatavilla.');
   await expect(page.locator('#kehitys h3')).toContainText('Demoa ei vielä ole.');
   await expect(page.locator('h1')).toHaveCount(1);
-  await expect(page.locator('.gallery-grid img')).toHaveCount(4);
-  await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/markka-gt-012.png');
-  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/markka-gt-012.png');
+  await expect(page.locator('.gallery-grid img')).toHaveCount(6);
+  await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/finnish-garage-simulator-talli-020.jpg');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/finnish-garage-simulator-talli-020.jpg');
   await expect(page.locator('form')).toHaveCount(0);
   await expect(page.locator('a[href$=".zip"],a[href$=".exe"]')).toHaveCount(0);
   for (const image of await page.locator('main img').all()) {
@@ -53,7 +53,7 @@ test('content pages, old URL and metadata remain consistent', async ({ page }) =
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('.status-strip')).toContainText('Julkista demoa ei vielä ole saatavilla.');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    for (const raw of await page.locator('script[type="application/ld+json"]').allTextContents()) expect(JSON.parse(raw)['@type']).toBe('WebPage');
+    for (const raw of await page.locator('script[type="application/ld+json"]').allTextContents()) expect(JSON.parse(raw)['@type'] || JSON.parse(raw)['@graph']?.find(node => node['@type'] === 'WebPage')?.['@type']).toBe('WebPage');
   }
   await page.goto('/fpv-rc-auto.html');
   await expect(page).toHaveURL(/pelista.html$/);
@@ -136,4 +136,33 @@ test('expired consent and unavailable storage do not silently enable analytics',
   await restricted.getByRole('button', { name: 'Hyväksy analytiikka' }).click();
   await expect.poll(() => restricted.evaluate(() => window.__tagLoaded)).toBe(true);
   await context.close();
+});
+
+
+test('current screenshots and SEO metadata are discoverable and consistent', async ({ page }) => {
+  for (const path of ['/', '/pelista.html', '/ohjaimet.html', '/kehitys-0-20.html', '/english.html']) {
+    await page.goto(path);
+    const canonical = 'https://nordhash.fi' + path;
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', canonical);
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', canonical);
+    const graph = await page.locator('script[type="application/ld+json"]').textContent();
+    const nodes = JSON.parse(graph)['@graph'];
+    expect(nodes.find(n => n['@type'] === 'VideoGame').creativeWorkStatus).toBe('In development');
+    expect(nodes.find(n => n['@type'] === 'VideoGame').offers).toBeUndefined();
+    expect(nodes.find(n => n['@type'] === 'WebPage').url).toBe(canonical);
+    expect(await page.locator('meta[name="description"]').getAttribute('content')).toBeTruthy();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+  await page.goto('/');
+  await expect(page.locator('link[hreflang="en"]')).toHaveAttribute('href','https://nordhash.fi/english.html');
+  await expect(page.locator('.hero-visual img')).toHaveAttribute('fetchpriority','high');
+  expect(await page.locator('.hero-visual img').evaluate(img => img.currentSrc)).toMatch(/-\d+\.webp$/);
+  await page.goto('/english.html');
+  await expect(page.locator('html')).toHaveAttribute('lang','en');
+  await expect(page.locator('.status-strip')).toContainText('No public demo is available yet.');
+  await expect(page.getByRole('region',{name:'Analytics preferences'})).toBeVisible();
+  await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
+  await page.getByRole('button',{name:'Essential only'}).click();
+  await expect(page.getByRole('region',{name:'Analytics preferences'})).toBeHidden();
+  await expect(page.locator('link[hreflang="fi"]')).toHaveAttribute('href','https://nordhash.fi/');
 });
