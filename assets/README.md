@@ -1,3 +1,13 @@
+# Nykyiset kuvat — 0.31 / 31.10.2026
+
+Etusivu ja englanninkielinen esittely käyttävät oikeita pelikuvia buildista `0.31.0-rebuilt-car-20261031-192147`. Lähde on pelin onnistunut Windows-testiajo. Tiedostokohtaiset alkuperät ja lähdekuvien SHA-256-tarkisteet: [screenshots-031.json](screenshots-031.json).
+
+Jokaisesta kuvasta on 480/800/1280 pikselin WebP-versio ja 1280×720 JPEG. Käsittely on ainoastaan koon muuttaminen ja verkkokoodaus; kuvan sisältöä ei ole retusoitu eikä generoitu. Kuvat eivät esitä valmista peliä tai julkista demoa.
+
+Kehityskatsaus 0.20 säilyttää omat kuvansa, koska se kuvaa kyseistä versiota. Vanhoja kuvatiedostoja ei poisteta, jotta aiemmin jaetut kuvalinkit säilyvät.
+
+---
+
 # Nykyiset kuvat — 0.20 / 26.10.2026
 
 Etusivu, englanninkielinen esittely ja kehityskatsaus käyttävät kahdeksaa oikeaa pelikuvaa buildista `0.20.0-complete-visual-world-20261026-045009`. Lähde on projektin `Screenshots/0.20`-kansio. Tiedostokohtaiset alkuperät ja lähdekuvien SHA-256-tarkisteet: [screenshots-020.json](screenshots-020.json).

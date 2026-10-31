@@ -39,7 +39,7 @@ for name in indexable:
  url='https://nordhash.fi/'+('' if name=='index.html' else name)
  assert f'rel="canonical" href="{url}"' in raw,name
  assert 'name="robots" content="index,follow,max-image-preview:large"' in raw,name
- assert 'content="https://nordhash.fi/assets/finnish-garage-simulator-talli-020.jpg"' in raw,name
+ assert 'content="https://nordhash.fi/assets/finnish-garage-simulator-korpi-031.jpg"' in raw,name
  graph=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',raw,re.S).group(1))['@graph']
  game=next(node for node in graph if node['@type']=='VideoGame')
  assert game['creativeWorkStatus']=='In development' and 'offers' not in game and 'aggregateRating' not in game,name

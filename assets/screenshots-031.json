@@ -1,0 +1,82 @@
+[
+  {
+    "name": "finnish-garage-simulator-korpi-031",
+    "source": "30-korpi-headlamp.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "818011ff7deb040ae057ec55c2da39e42828e5a9551fb32e39540070f1bd606f",
+    "alt": "Vihreä kuvitteellinen Korpi-projektiauto etuviistosta pihalla Finnish Garage Simulatorin 0.31-kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-talli-031",
+    "source": "graphics20-workshop-interior.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "9968ed13a06d7d00d647aae59ae6d1a2d0ca552d53e9a6137830b9490c11859f",
+    "alt": "Finnish Garage Simulatorin talli: työkalukärry, työpöytä ja varaosahyllyt 0.31-kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-moottori-031",
+    "source": "korpi-engine-bay.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "05f545e666545be093c242c4c6bd395297a5844b57733db58cb85ac8b85096f6",
+    "alt": "Kuvitteellisen Korpi-auton avoin konehuone: moottori, akku, jäähdytin ja letkut kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-kesametsa-031",
+    "source": "graphics20-forest-summer.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "390d90c3c28456cacd0aa812c881d7aa94e4d1619c73114a1f8f69e2479862f6",
+    "alt": "Kesäinen soratie ja metsä matkalla ladolle Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-talvitie-031",
+    "source": "graphics20-forest-winter.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "7281203c5fa1501ef2c6c71939e3509ef8c008cec669cc14bb46c86a39eda4d3",
+    "alt": "Luminen metsä ja talvinen soratie Finnish Garage Simulatorin 0.31-kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-markka-gt-031",
+    "source": "30-rally-headlamp.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "31c5652b355759d5623b72122d04870b09b6809055c721faf03a8c5152dd26e7",
+    "alt": "Punainen kuvitteellinen Markka GT -projektiauto etuviistosta kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-ohjaamo-031",
+    "source": "27-korpi-driving.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "934677b86bcd8a69523b1e15411b987ec55fb091d20e4708ebe81867de05f6e4",
+    "alt": "Korpi-auton ohjaamo, mittaristo ja kuljettajan kädet ratissa pelin ensimmäisen persoonan ajonäkymässä",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-puutyo-031",
+    "source": "wood-split.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "d4cb3ae857d8d8f94251e7adfd38c6913e84c05f1aaad2cb844d2d11dc00a2f7",
+    "alt": "Pöllin halkaisu kirveellä ja näkyvät kädet Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-paku-031",
+    "source": "30-paku-rear.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "8a7d12d2178eed3e6db51787eb574fb2bafaab89e26645b2c269b81e42cec678",
+    "alt": "Kuvitteellinen vaalea umpipaku takaviistosta tallin pihalla, alaosissa ruostetta, kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-korpi-taka-031",
+    "source": "30-korpi-rear.png",
+    "build": "0.31.0-rebuilt-car-20261031-192147",
+    "sourceSha256": "48b52d632edc7e5f31c3c2deed848995d0e8f40db886a4d9263c533723fc1b54",
+    "alt": "Vihreä kuvitteellinen Korpi-projektiauto takaviistosta tallin edessä kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]

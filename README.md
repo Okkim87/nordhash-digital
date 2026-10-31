@@ -34,6 +34,10 @@ Google Analytics 4 käyttää tunnusta G-F93778VN28. analytics.js sisältää k�
 
 Omistajan Analytics-tilin raportteja, tietojen säilytysasetuksia tai Google-tilin asetuksia ei muutettu. Tarkista ne Analyticsin hallinnassa. Testit varmistavat latausportin ja tunnisteen; raporttien kertymistä ei voi vahvistaa ilman Analytics-tilin näkymää. Toteutuksen lähde: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic .
 
+## Kuvat 31.10.2026
+
+- Uudet 0.31-version oikeat pelikuvat: uudelleen mallinnetut autot ja konehuone. Pääkuva ja jakokuva näyttävät Korpin. Alkuperät: assets/screenshots-031.json.
+
 ## Kuvat ja SEO 26.10.2026
 
 - Kahdeksan 0.20-version oikeaa pelikuvaa; responsive WebP 480/800/1280 px, progressiivinen JPEG-varakuva, mitat, kuvailevat vaihtoehtotekstit, etusivun pääkuvan korkea latausprioriteetti ja muiden kuvien viivästetty lataus.

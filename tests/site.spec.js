@@ -11,9 +11,9 @@ test('home shows development status, real images and working navigation', async 
   await expect(page.locator('.status-strip')).toContainText('Julkista demoa ei vielä ole saatavilla.');
   await expect(page.locator('#kehitys h3')).toContainText('Demoa ei vielä ole.');
   await expect(page.locator('h1')).toHaveCount(1);
-  await expect(page.locator('.gallery-grid img')).toHaveCount(6);
-  await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/finnish-garage-simulator-talli-020.jpg');
-  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/finnish-garage-simulator-talli-020.jpg');
+  await expect(page.locator('.gallery-grid img')).toHaveCount(8);
+  await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/finnish-garage-simulator-korpi-031.jpg');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/finnish-garage-simulator-korpi-031.jpg');
   await expect(page.locator('form')).toHaveCount(0);
   await expect(page.locator('a[href$=".zip"],a[href$=".exe"]')).toHaveCount(0);
   for (const image of await page.locator('main img').all()) {
