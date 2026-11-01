@@ -34,6 +34,9 @@ Google Analytics 4 käyttää tunnusta G-F93778VN28. analytics.js sisältää k�
 
 Omistajan Analytics-tilin raportteja, tietojen säilytysasetuksia tai Google-tilin asetuksia ei muutettu. Tarkista ne Analyticsin hallinnassa. Testit varmistavat latausportin ja tunnisteen; raporttien kertymistä ei voi vahvistaa ilman Analytics-tilin näkymää. Toteutuksen lähde: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic .
 
+## Kuvat 1.11.2026
+- Uusimman kehitysversion oikeat pelikuvat: pääkuva ja jakokuva näyttävät Korpin renkaanpolton, galleriaan tulivat havumetsä, Paku ja irronnut pyörä. Muut kuvat on merkitty aiemmista versioista. Versionumeroita ei näytetä kuvateksteissä. Alkuperät: assets/screenshots-058.json.
+
 ## Kuvat 31.10.2026
 
 - Uudet 0.31-version oikeat pelikuvat: uudelleen mallinnetut autot ja konehuone. Pääkuva ja jakokuva näyttävät Korpin. Alkuperät: assets/screenshots-031.json.
