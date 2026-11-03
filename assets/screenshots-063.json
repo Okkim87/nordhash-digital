@@ -1,0 +1,18 @@
+[
+  {
+    "name": "finnish-garage-simulator-kirkonkyla-063",
+    "source": "world-kirkonkyla.png",
+    "build": "development build, world review capture 2026-11-03 20:22",
+    "sourceSha256": "8bc107f76af5e818a4f326f4dafd130f138251a813375f34c51895f1ed11bfa5",
+    "alt": "Kirkonkylän risteys ylhäältä: seututie, soratie, taloja ja havumetsää Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-jarvikyla-063",
+    "source": "world-jarvikyla.png",
+    "build": "development build, world review capture 2026-11-03 20:22",
+    "sourceSha256": "e42070837df68a1992a0a5a8a8b1a80fb5030f5c265dd30428a1c8a9ad5fb4e2",
+    "alt": "Järvikylä ylhäältä: punaisia taloja soratien varrella ja järvi metsän takana kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]

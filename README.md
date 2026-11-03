@@ -34,6 +34,9 @@ Google Analytics 4 käyttää tunnusta G-F93778VN28. analytics.js sisältää k�
 
 Omistajan Analytics-tilin raportteja, tietojen säilytysasetuksia tai Google-tilin asetuksia ei muutettu. Tarkista ne Analyticsin hallinnassa. Testit varmistavat latausportin ja tunnisteen; raporttien kertymistä ei voi vahvistaa ilman Analytics-tilin näkymää. Toteutuksen lähde: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic .
 
+## Kuvat ja tekstit 3.11.2026
+- Galleriaan lisättiin kirkonkylä ja Järvikylä laajentuneelta maaseudulta. Tekstit kertovat 4,8 × 4,8 km:n maailmasta, Facebook-seuraajien ideoista ja tulossa olevasta suljetusta betatestistä. Alkuperät: assets/screenshots-063.json.
+
 ## Kuvat 1.11.2026
 - Uusimman kehitysversion oikeat pelikuvat: pääkuva ja jakokuva näyttävät Korpin renkaanpolton, galleriaan tulivat havumetsä, Paku ja irronnut pyörä. Muut kuvat on merkitty aiemmista versioista. Versionumeroita ei näytetä kuvateksteissä. Alkuperät: assets/screenshots-058.json.
 
