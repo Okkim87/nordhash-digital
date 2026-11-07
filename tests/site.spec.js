@@ -8,10 +8,10 @@ test('home shows development status, real images and working navigation', async 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await expect(page).toHaveTitle(/Finnish Garage Simulator.*kehityksessä/);
-  await expect(page.locator('.status-strip')).toContainText('Julkista demoa ei vielä ole saatavilla.');
-  await expect(page.locator('#kehitys h3')).toContainText('Demoa ei vielä ole.');
+  await expect(page.locator('.status-strip')).toContainText('Suljettuun betatestiin haetaan testaajia.');
+  await expect(page.locator('#kehitys h3')).toContainText('Betatestaajia haetaan.');
   await expect(page.locator('h1')).toHaveCount(1);
-  await expect(page.locator('.gallery-grid img')).toHaveCount(10);
+  await expect(page.locator('.gallery-grid img')).toHaveCount(12);
   await expect(page.locator('.hero-visual img')).toHaveAttribute('src', 'assets/finnish-garage-simulator-renkaanpoltto-058.jpg');
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://nordhash.fi/assets/finnish-garage-simulator-renkaanpoltto-058.jpg');
   await expect(page.locator('form')).toHaveCount(0);
@@ -159,7 +159,7 @@ test('current screenshots and SEO metadata are discoverable and consistent', asy
   expect(await page.locator('.hero-visual img').evaluate(img => img.currentSrc)).toMatch(/-\d+\.webp$/);
   await page.goto('/english.html');
   await expect(page.locator('html')).toHaveAttribute('lang','en');
-  await expect(page.locator('.status-strip')).toContainText('No public demo is available yet.');
+  await expect(page.locator('.status-strip')).toContainText('We are looking for closed beta testers.');
   await expect(page.getByRole('region',{name:'Analytics preferences'})).toBeVisible();
   await expect(page.locator('#fgs-google-tag')).toHaveCount(0);
   await page.getByRole('button',{name:'Essential only'}).click();

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "finnish-garage-simulator-ojat-070",
+    "source": "ditch-roadside.png",
+    "build": "development build, smoke test capture 2026-11-07 17:35",
+    "sourceSha256": "476d649fedaea2dfdf21cbb6d0e5ba8331df054b24ec256735b70757bd8585c5",
+    "alt": "Soratie ojineen: kukkivaa maitohorsmaa ja lupiinia tienvarressa, sähköjohdot puiden yllä ja auto ojassa Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-tienvarsi-070",
+    "source": "world-hill-road.png",
+    "build": "development build, smoke test capture 2026-11-07 17:35",
+    "sourceSha256": "062ba7da4d3d7f324903bac4f8f292678763276c7256e6ab62c60ccaf736f497",
+    "alt": "Tie nousee mäkeen leikkauksessa: luiskilla kukkii lupiinia ja tien molemmin puolin kasvaa sekametsää kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]
