@@ -1,0 +1,34 @@
+[
+  {
+    "name": "finnish-garage-simulator-kaleva-kura-091",
+    "source": "kaleva-1.png",
+    "build": "development build, Unity editor Game view capture 2026-11-17",
+    "sourceSha256": "0c3eacde4d2e2e4c36b462b0e7cdd428de31936889240e863967efb437637fdc",
+    "alt": "Kurainen viininpunainen Kaleva 2000 GL Korven tallin edessä Finnish Garage Simulatorin kehitysversiossa",
+    "processing": "crop (removes the back of a road sign at the left edge) + resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-sointu-091",
+    "source": "sointu-1.png",
+    "build": "development build, Unity editor Game view capture 2026-11-17",
+    "sourceSha256": "6c8c1980924b0ad6eee2d9331ab01a95d9327db33aee529969a00ec359890a34",
+    "alt": "Vaaleansininen 1990-luvun Sointu 1.6 GLi Korven tallin edessä kehitysversiossa",
+    "processing": "crop (removes the back of a road sign at the left edge) + resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-metsatie-091",
+    "source": "korpi-metsatie.png",
+    "build": "development build, Unity editor Game view capture 2026-11-17",
+    "sourceSha256": "7bb1040aadf7edbad214972a8bc4aa098128384607381c9ebfc4aa22d6fab0f1",
+    "alt": "Vihreä Korpi 1200 ajaa kesäistä soratietä, tienvarsilla kukkii maitohorsmaa ja metsä jatkuu horisonttiin kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-mittaristo-091",
+    "source": "kaleva-mittaristo.png",
+    "build": "development build, Unity editor Game view capture 2026-11-17",
+    "sourceSha256": "999ba99776e8e4e1b7ffe107958be2da9b315440306c5c7dc3262b476ba57792",
+    "alt": "Kalevan ohjaamo metsätiellä: neljä toimivaa mittaria, ratti ja pyyhkijät konepellin takana kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]
