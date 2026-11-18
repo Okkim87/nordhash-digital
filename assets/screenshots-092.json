@@ -1,0 +1,18 @@
+[
+  {
+    "name": "finnish-garage-simulator-ohjaamo-092",
+    "source": "korpi-ohjaamo.png",
+    "build": "development build, Unity editor Game view capture 2026-11-18",
+    "sourceSha256": "0128955f6a0a9d275aae1aea905371b634bed5de7b9b40f2b19ccc3dc9beb052",
+    "alt": "Korpi 1200:n ohjaamo: yksi mittaristo, jossa neljä kromikehyksistä mittaria puupaneelissa, ratti ja pyyhkijät kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  },
+  {
+    "name": "finnish-garage-simulator-moottoritila-092",
+    "source": "sointu-moottoritila.png",
+    "build": "development build, Unity editor Game view capture 2026-11-18",
+    "sourceSha256": "092c1333704fc41533ad86f30b5fe48e5c3319d540ee986aa1bbcfcc2d9ce9f5",
+    "alt": "Soinnun avoin moottoritila ja pelin vihje: Pidä E, irrota termostaatti, avain 10 mm, kehitysversiossa",
+    "processing": "resize + WebP/JPEG encoding only; no retouching"
+  }
+]
